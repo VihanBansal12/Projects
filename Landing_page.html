@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Shop</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+}
+
+.landing-page {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: #ffaa00;
+    color: #fff;
+    border-radius: 5px;
+}
+.logo {
+    position: absolute; 
+    top: 80px; 
+    left: 60px; 
+}
+
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.menu, .cta {
+    flex: 1;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: lime;
+    text-decoration: underline dashed;
+}
+h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:30px;
+    text-decoration:underline;
+}
+p{
+    font-family: fantasy;
+    color:lime;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+button {
+    background: #ffaa00;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#order-button{
+    font-size: large;
+}
+#order-button:hover{
+    font-size: large;
+    color: blue;
+}
+
+button:hover {
+    background: #e59400;
+}
+.contact {
+    padding: 20px;
+    background: #e59400;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact p2 {
+    text-align: center;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact ul li {
+    margin-bottom: 5px;
+}
+
+</style>
+<body>
+    <div class="landing-page">
+        <header>
+            <div class="logo">
+                <img src="C:\Users\bansa\OneDrive\Pictures\Screenshots\Screenshot 2023-10-15 184119.png" alt="Food Delights Logo" width="90">
+            </div>
+            <h1>Welcome to Food Delights</h1>
+            <p>Your go-to place for delicious food</p>
+        </header>
+        <main>
+            <section class="menu">
+                <h2>Our Menu -</h2>
+                <ul>
+                    <li data-item="Pizza">
+                        <img src="C:\Users\bansa\OneDrive\Pictures\Screenshots\Screenshot 2023-10-15 181738.png" alt="Pizza" width="200" height="150">
+                        Pizza
+                        <button class="add-to-cart">Add to Cart</button>
+                    </li>
+                    <li data-item="Burgers">
+                        <img src="C:\Users\bansa\Downloads\tasty-burger-isolated-white-background-fresh-hamburger-fastfood-with-beef-cheese.jpg" alt="Burgers" width="200" height="150">
+                        Burgers
+                        <button class="add-to-cart">Add to Cart</button>
+                    </li>
+                    <li data-item="Pasta">
+                        <img src="C:\Users\bansa\Downloads\pixzolo-photography-aeESmmFKH0M-unsplash.jpg" alt="Pasta" width="200" height="150">
+                        Pasta
+                        <button class="add-to-cart">Add to Cart</button>
+                    </li>
+                    <li data-item="Sushi">
+                        <img src="C:\Users\bansa\Downloads\vinicius-benedit--1GEAA8q3wk-unsplash.jpg" alt="Sushi" width="200" height="150">
+                        Sushi
+                        <button class="add-to-cart">Add to Cart</button>
+                    </li>
+                </ul>
+            </section>
+            <section class="cta">
+                <h2>Order Now -</h2>
+                <p1>Choose your favorite dish and enjoy it in the comfort of your home.</p1>
+                <button id="order-button">Order Now</button>
+            </section>
+        </main>
+        <aside class="cart">
+            <h2>Cart -</h2>
+            <ul id="cart-items">
+            </ul>
+        </aside>
+        <section class="contact">
+            <h2><ins>Contact Us</ins></h2>
+            <p2><h4>If you have any questions or need assistance, feel free to reach out to us:</h4></p2>
+            <ul>
+                <li>Email: <a href="mailto:bansalvihan02@gmail.com" class="anc1">bansalvihan02@gmail.com</a>&nbsp;</li>
+                <br>
+                <li>Phone:<a href="tel:7668267836" class="anc1">+91******7836</a></li>
+                <br>
+                <li>Address: 123 Main St, Noida, India</li>
+            </ul>
+        </section>
+    </div>
+    <script>
+        document.getElementById('order-button').addEventListener('click', function() {
+    alert('Order button clicked! Choose your favorite dish.');
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartItems = document.getElementById('cart-items');
+    const orderButton = document.getElementById('order-button');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const menuItem = this.parentNode.getAttribute('data-item');
+            const cartItem = document.createElement('li');
+            cartItem.textContent = menuItem;
+            cartItems.appendChild(cartItem);
+        });
+    });
+
+    orderButton.addEventListener('click', function () {
+        alert('Your order has been placed! Thank you for choosing Food Delights.');
+    });
+});
+
+
+    </script>
+</body>
+</html>
